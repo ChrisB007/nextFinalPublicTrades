@@ -16,19 +16,19 @@ export async function getServerSideProps(context) {
   const res = await fetch("http://localhost:3000/api/projects");
   const projects = await res.json();
 
-  console.log(project);
+  console.log(projects);
 
   return {
     props: {
       session,
-      project,
+      projects,
     },
   };
 }
 
-export default function Navbar({ data, session }) {
+export default function Navbar({ projects, session }) {
   //   const [session, loading] = useSession();
-  console.log(data);
+  console.log(projects);
   console.log(session);
   return (
     <Disclosure as="nav" className="bg-white shadow">
