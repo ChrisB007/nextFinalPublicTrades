@@ -111,11 +111,11 @@ export default function Hero() {
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-yellow-500 rounded-lg h-full ">
                     <img
                       className=" w-60  rounded-xl object-cover bg-white mb-4"
                       src="/images/flats.png"
-                      alt="PublicTrades"
+                      alt="FluidFlats"
                     />
                   </div>
                   <p className="block font-semibold text-gray-500">
@@ -124,11 +124,11 @@ export default function Hero() {
                 </div>
 
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white rounded-lg h-full ">
                     <img
                       className=" w-60 rounded-xl object-cover bg-white mb-4"
                       src="/images/berdome.png"
-                      alt="PublicTrades"
+                      alt="TuberDome"
                     />
                   </div>
                   <p className="block font-semibold text-gray-500">
@@ -137,7 +137,7 @@ export default function Hero() {
                 </div>
 
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-red-500 rounded-lg h-full">
                     <img
                       className=" w-60 rounded-xl object-cover bg-white mb-4"
                       src="/images/flats.png"
@@ -149,7 +149,7 @@ export default function Hero() {
                   </p>
                 </div>
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-purple-300 rounded-lg h-full ">
                     <img
                       className=" w-60 rounded-xl object-cover bg-white mb-4"
                       src="/images/flats.png"
