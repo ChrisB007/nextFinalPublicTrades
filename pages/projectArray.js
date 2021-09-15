@@ -1,23 +1,23 @@
 export const portfolios = [
   {
-    title: "mOOdFlics",
+    title: "flicBase",
     description:
       "Watch movies, TV, and Stream contents based on how you feel. ",
-    image: "images/moodflics.png",
-    url: "https://www.moodflics.com",
+    image: "/images/flicbaselogo.png",
+    url: "https://www.flicbase.com",
     type: "Web App",
   },
   {
-    title: "CyberNeighbors",
+    title: "TuberDome",
     description: "Community for apartment buildings and tenants alike.",
-    image: "images/neighbors.png",
-    url: "https://www.cyberneighbors.com",
+    image: "/images/berdome.png",
+    url: "https://www.tuberdome.com",
     type: "Web App",
   },
   {
-    title: "Garage API",
+    title: "fluidFlats",
     description: "Make decisions based on what's trending in real time.",
-    image: "../images/api.png",
+    image: "/images/flats.png",
     url: "https://www.garage-api.com",
     type: "Web App",
   },

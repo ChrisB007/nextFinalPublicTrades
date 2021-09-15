@@ -4,32 +4,15 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { PlusSmIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession, getSession } from "next-auth/client";
-import styles from "./header.module.css";
+import styles from "../header.module.css";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-
-  const res = await fetch("http://localhost:3000/api/projects");
-  const projects = await res.json();
-
-  console.log(projects);
-
-  return {
-    props: {
-      session,
-      projects,
-    },
-  };
-}
-
 export default function Navbar({ projects, session }) {
   //   const [session, loading] = useSession();
-  console.log(projects);
-  console.log(session);
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (

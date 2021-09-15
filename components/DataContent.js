@@ -45,7 +45,6 @@ export async function getServerSideProps() {
 }
 
 export default function DataContent({ readText }) {
-  console.log(readText);
   //   console.log(data);
   return (
     <ul

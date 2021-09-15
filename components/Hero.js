@@ -9,7 +9,7 @@ import {
   QuestionMarkCircleIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { portfolios } from "../pages/projectArray";
 
 const solutions = [
   {
@@ -109,63 +109,30 @@ export default function Hero() {
               <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide ">
                 Growing list of web and mobile apps that once were just ideas.
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-yellow-500 rounded-lg h-full ">
-                    <img
-                      className=" w-60  rounded-xl object-cover bg-white mb-4"
-                      src="/images/flats.png"
-                      alt="FluidFlats"
-                    />
+              <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3  lg:grid-cols-4">
+                {portfolios.map((portfolio) => (
+                  <div
+                    key={portfolio.title}
+                    className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 bg-gray-200  cursor-pointer flex-wrap"
+                  >
+                    <a href={portfolio.url}>
+                      <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-full ">
+                        <img
+                          className=" w-60  rounded-xl object-cover  mb-4"
+                          src={portfolio.image}
+                          alt={portfolio.title}
+                        />
+                      </div>
+                      <p className="block mt-3 text-center font-semibold text-gray-500">
+                        Click to Visit
+                      </p>
+                    </a>
                   </div>
-                  <p className="block font-semibold text-gray-500">
-                    Click to Visit
-                  </p>
-                </div>
-
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white rounded-lg h-full ">
-                    <img
-                      className=" w-60 rounded-xl object-cover bg-white mb-4"
-                      src="/images/berdome.png"
-                      alt="TuberDome"
-                    />
-                  </div>
-                  <p className="block font-semibold text-gray-500">
-                    Click to Visit
-                  </p>
-                </div>
-
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-red-500 rounded-lg h-full">
-                    <img
-                      className=" w-60 rounded-xl object-cover bg-white mb-4"
-                      src="/images/flats.png"
-                      alt="PublicTrades"
-                    />
-                  </div>
-                  <p className="block font-semibold text-gray-500">
-                    Click to Visit
-                  </p>
-                </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-purple-300 rounded-lg h-full ">
-                    <img
-                      className=" w-60 rounded-xl object-cover bg-white mb-4"
-                      src="/images/flats.png"
-                      alt="PublicTrades"
-                    />
-                  </div>
-                  <p className="block font-semibold text-gray-500">
-                    Click to Visit
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-
-        {/* More main page content here... */}
       </main>
     </div>
   );
