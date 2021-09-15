@@ -2,9 +2,11 @@ import Layout from "../components/layout";
 import Hero from "../components/Hero";
 import DataContent from "../components/DataContent";
 import { signIn, signOut, getSession } from "next-auth/client";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import styles from "../components/header.module.css";
+import Header from "../components/header";
+import Login from "../components/Login";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -23,14 +25,13 @@ export async function getServerSideProps(context) {
 }
 
 export default function Page({ session, projects }) {
-  console.log({ session });
-  console.log(projects);
+  console.log(session);
 
   return (
     <Layout>
       {/* Navigation bar bigin */}
 
-      <Disclosure as="nav" className="bg-white shadow">
+      <Disclosure as="nav" className="bg-white shadow mb-4">
         {({ open }) => (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,62 +101,16 @@ export default function Page({ session, projects }) {
                     </a>
                   </div>
                 </div>
+
                 <div className="flex items-center">
-                  <div className={styles.signedInStatus}>
+                  <Login />
+                  {/* <div className={styles.signedInStatus}>
                     <p
                       className={`nojs-show ${
                         !session ? styles.loading : styles.loaded
                       }`}
-                    >
-                      {!session && (
-                        <>
-                          <span className={styles.notSignedInText}>
-                            You are not signed in
-                          </span>
-
-                          <a
-                            href={`/api/auth/signin`}
-                            className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              signIn();
-                            }}
-                          >
-                            Sign in
-                          </a>
-                        </>
-                      )}
-                      {session && (
-                        <>
-                          {session.user.image && (
-                            <span
-                              style={{
-                                backgroundImage: `url(${session.user.image})`,
-                              }}
-                              className={styles.avatar}
-                            />
-                          )}
-                          <span className={styles.signedInText}>
-                            <small>Signed in as</small>
-                            <br />
-                            <strong>
-                              {session.user.email || session.user.name}
-                            </strong>
-                          </span>
-                          <a
-                            href={`/api/auth/signout`}
-                            className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              signOut();
-                            }}
-                          >
-                            Sign out
-                          </a>
-                        </>
-                      )}
-                    </p>
-                  </div>
+                    ></p>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -164,8 +119,8 @@ export default function Page({ session, projects }) {
               <div className="pt-2 pb-3 space-y-1">
                 {/* Current: "bg-green-50 border-green-500 text-green-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
                 <a
-                  href="#"
-                  className="bg-green-50 border-green-500 text-green-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6"
+                  href="/protected"
+                  className="bg-green-50  text-green-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium sm:pl-5 sm:pr-6"
                 >
                   Dashboard
                 </a>

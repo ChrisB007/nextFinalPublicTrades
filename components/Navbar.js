@@ -1,10 +1,8 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { PlusSmIcon } from "@heroicons/react/solid";
-import { signIn, signOut, useSession, getSession } from "next-auth/client";
+
 import styles from "../header.module.css";
+import Login from "./Login";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -54,7 +52,7 @@ export default function Navbar({ projects, session }) {
                     <>
                       <a
                         href="/protected"
-                        className="border-green-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        className="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                       >
                         Dashboard
                       </a>
@@ -88,53 +86,7 @@ export default function Navbar({ projects, session }) {
                       !session ? styles.loading : styles.loaded
                     }`}
                   >
-                    {!session && (
-                      <>
-                        <span className={styles.notSignedInText}>
-                          You are not signed in
-                        </span>
-
-                        <a
-                          href={`/api/auth/signin`}
-                          className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            signIn();
-                          }}
-                        >
-                          Sign in
-                        </a>
-                      </>
-                    )}
-                    {session && (
-                      <>
-                        {session.user.image && (
-                          <span
-                            style={{
-                              backgroundImage: `url(${session.user.image})`,
-                            }}
-                            className={styles.avatar}
-                          />
-                        )}
-                        <span className={styles.signedInText}>
-                          <small>Signed in as</small>
-                          <br />
-                          <strong>
-                            {session.user.email || session.user.name}
-                          </strong>
-                        </span>
-                        <a
-                          href={`/api/auth/signout`}
-                          className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            signOut();
-                          }}
-                        >
-                          Sign out
-                        </a>
-                      </>
-                    )}
+                    <Login />
                   </p>
                 </div>
               </div>
