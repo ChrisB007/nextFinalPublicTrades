@@ -111,9 +111,9 @@ export default function Hero() {
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <div>
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
                     <img
-                      className="h-12 w-60 rounded-xl object-contain bg-white mb-4"
+                      className=" w-60  rounded-xl object-cover bg-white mb-4"
                       src="/images/flats.png"
                       alt="PublicTrades"
                     />
@@ -123,33 +123,39 @@ export default function Hero() {
                   </p>
                 </div>
 
-                <div className="col-span-1 w-80 flex justify-center md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap">
-                  <img
-                    className="h-12 w-60 object-contain rounded-xl bg-white mb-4"
-                    src="/images/berdome.png"
-                    alt="PublicTrades"
-                  />
+                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                    <img
+                      className=" w-60 rounded-xl object-cover bg-white mb-4"
+                      src="/images/berdome.png"
+                      alt="PublicTrades"
+                    />
+                  </div>
                   <p className="block font-semibold text-gray-500">
                     Click to Visit
                   </p>
                 </div>
 
-                <div className="col-span-1 w-60 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1 cursor-pointer flex-wrap">
-                  <img
-                    className="h-12 w-60 object-contain rounded-xl bg-white mb-4"
-                    src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                    alt="Transistor"
-                  />
+                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                    <img
+                      className=" w-60 rounded-xl object-cover bg-white mb-4"
+                      src="/images/flats.png"
+                      alt="PublicTrades"
+                    />
+                  </div>
                   <p className="block font-semibold text-gray-500">
                     Click to Visit
                   </p>
                 </div>
-                <div className="col-span-2 w-60 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1 cursor-pointer flex-wrap">
-                  <img
-                    className="h-12 w-60 object-contain rounded-xl bg-white mb-4"
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                  />
+                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 cursor-pointer flex-wrap">
+                  <div className="col-span-1 w-80 flex justify-center items-center pt-3  md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap bg-white h-40 ">
+                    <img
+                      className=" w-60 rounded-xl object-cover bg-white mb-4"
+                      src="/images/flats.png"
+                      alt="PublicTrades"
+                    />
+                  </div>
                   <p className="block font-semibold text-gray-500">
                     Click to Visit
                   </p>

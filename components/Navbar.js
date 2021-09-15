@@ -3,15 +3,33 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { PlusSmIcon } from "@heroicons/react/solid";
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signOut, useSession, getSession } from "next-auth/client";
 import styles from "./header.module.css";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
-  const [session, loading] = useSession();
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  const res = await fetch("http://localhost:3000/api/projects");
+  const projects = await res.json();
+
+  console.log(project);
+
+  return {
+    props: {
+      session,
+      project,
+    },
+  };
+}
+
+export default function Navbar({ data, session }) {
+  //   const [session, loading] = useSession();
+  console.log(data);
+  console.log(session);
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -84,7 +102,7 @@ export default function Navbar() {
                 <div className={styles.signedInStatus}>
                   <p
                     className={`nojs-show ${
-                      !session && loading ? styles.loading : styles.loaded
+                      !session ? styles.loading : styles.loaded
                     }`}
                   >
                     {!session && (
