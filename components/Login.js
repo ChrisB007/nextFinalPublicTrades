@@ -1,9 +1,15 @@
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
 import styles from "./header.module.css";
+import { useRouter } from "next/router";
 
 function Login() {
   const [session, loading] = useSession();
+  //   const router = useRouter();
+
+  //   if (session) {
+  //     router.push("/dashboard");
+  //   }
   return (
     <>
       {(!session || session === null) && (
@@ -41,12 +47,6 @@ function Login() {
           >
             Sign Out
           </a>
-
-          {/* <span className={styles.signedInText}>
-            <small>Signed in as</small>
-            <br />
-            <strong>{session.user.email || session.user.name}</strong>
-          </span> */}
         </>
       )}
     </>

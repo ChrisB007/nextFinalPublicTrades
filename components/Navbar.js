@@ -52,7 +52,7 @@ export default function Navbar({ projects, session }) {
                     <>
                       <a
                         href="/protected"
-                        className="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        className="text-gray-900 inline-flex items-center px-1 pt-1 border-none hover:border-b-2 hover:bg-gray-500 text-sm font-medium"
                       >
                         Dashboard
                       </a>

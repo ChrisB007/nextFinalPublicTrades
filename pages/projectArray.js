@@ -21,11 +21,4 @@ export const portfolios = [
     url: "https://www.garage-api.com",
     type: "Web App",
   },
-  {
-    title: "TuberDome",
-    description: "Watch movies, tv, and stream contents based on how you feel.",
-    image: "../images/tuberdome.png",
-    url: "https://www.tuberdome.com",
-    type: "Web/Mobile",
-  },
 ];

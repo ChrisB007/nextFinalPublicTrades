@@ -4,8 +4,6 @@ import DataContent from "../components/DataContent";
 import { signIn, signOut, getSession } from "next-auth/client";
 import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import styles from "../components/header.module.css";
-import Header from "../components/header";
 import Login from "../components/Login";
 
 export async function getServerSideProps(context) {
@@ -13,8 +11,6 @@ export async function getServerSideProps(context) {
 
   const res = await fetch("http://localhost:3000/api/projects");
   const projects = await res.json();
-
-  console.log(projects);
 
   return {
     props: {
@@ -25,8 +21,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Page({ session, projects }) {
-  console.log(session);
-
   return (
     <Layout>
       {/* Navigation bar bigin */}
@@ -74,7 +68,7 @@ export default function Page({ session, projects }) {
                       <>
                         <a
                           href="/protected"
-                          className="border-green-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                          className=" text-gray-900 inline-flex items-center px-1 pt-1 hover:bg-green-200 hover:border-b-2 text-sm font-medium"
                         >
                           Dashboard
                         </a>
@@ -83,34 +77,27 @@ export default function Page({ session, projects }) {
 
                     <a
                       href="#"
-                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 hover:bg-green-200 hover:border-b-2 text-sm font-medium"
                     >
                       Team
                     </a>
                     <a
                       href="#"
-                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 hover:bg-green-200 hover:border-b-2 text-sm font-medium"
                     >
                       Projects
                     </a>
                     <a
                       href="#"
-                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 hover:bg-green-200 hover:border-b-2 text-sm font-medium"
                     >
-                      Calendar
+                      Contact Us
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center">
                   <Login />
-                  {/* <div className={styles.signedInStatus}>
-                    <p
-                      className={`nojs-show ${
-                        !session ? styles.loading : styles.loaded
-                      }`}
-                    ></p>
-                  </div> */}
                 </div>
               </div>
             </div>

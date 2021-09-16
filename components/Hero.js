@@ -109,14 +109,14 @@ export default function Hero() {
               <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide ">
                 Growing list of web and mobile apps that once were just ideas.
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3  lg:grid-cols-4">
+              <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
                 {portfolios.map((portfolio) => (
                   <div
                     key={portfolio.title}
                     className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 bg-gray-200  cursor-pointer rounded-lg flex-wrap"
                   >
                     <a href={portfolio.url}>
-                      <div className="col-span-1 w-80 flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
+                      <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
                         <img
                           className=" w-32 rounded-xl object-contain mb-4"
                           src={portfolio.image}
