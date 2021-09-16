@@ -9,14 +9,16 @@ export const portfolios = [
   },
   {
     title: "TuberDome",
-    description: "Community for apartment buildings and tenants alike.",
+    description:
+      "With this app brands and marketers alike can sponsor content creators on YouTube.",
     image: "/images/berdome.png",
     url: "https://www.tuberdome.com",
     type: "Web App",
   },
   {
     title: "fluidFlats",
-    description: "Make decisions based on what's trending in real time.",
+    description:
+      "Live anywhere at anytime you wish with Fluid rental apartments.",
     image: "/images/flats.png",
     url: "https://www.garage-api.com",
     type: "Web App",

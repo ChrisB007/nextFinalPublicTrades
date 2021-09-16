@@ -5,25 +5,19 @@ import AccessDenied from "../components/access-denied";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   BellIcon,
-  BookmarkAltIcon,
-  CashIcon,
   CogIcon,
   LogoutIcon,
-  FireIcon,
   HomeIcon,
   InboxIcon,
-  KeyIcon,
   MenuIcon,
-  PhotographIcon,
   SearchCircleIcon,
-  UserIcon,
   ViewGridAddIcon,
   XIcon,
 } from "@heroicons/react/outline";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 const navigation = [
-  { name: "Home", href: "/dashboard", icon: HomeIcon },
+  { name: "Home", href: "/protected", icon: HomeIcon },
   { name: "Messages", href: "#", icon: InboxIcon },
   { name: "SignOut", href: "/api/auth/signout", icon: LogoutIcon },
 ];
@@ -61,7 +55,6 @@ const subNavigation = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-import styles from "../components/header.module.css";
 
 export default function Page() {
   const [session, loading] = useSession();
@@ -206,12 +199,12 @@ export default function Page() {
           <div className="flex flex-col w-20">
             <div className="flex-1 flex flex-col min-h-0 overflow-y-auto bg-green-600">
               <div className="flex-1 flex flex-col">
-                <div className="flex-shrink-0 bg-white py-4 flex items-center justify-center">
-                  <img
+                <div className="flex-shrink-0 bg-green-700 py-4 flex items-center justify-center">
+                  {/* <img
                     className="h-8 w-auto object-contain"
                     src="/images/logo.png"
                     alt="Logo"
-                  />
+                  /> */}
                 </div>
                 <nav
                   aria-label="Sidebar"
@@ -293,10 +286,9 @@ export default function Page() {
                   aria-label="Sections"
                   className="hidden flex-shrink-0 w-96 bg-white border-r border-green-gray-200 xl:flex xl:flex-col"
                 >
-                  <div className="flex-shrink-0 h-16 px-6 border-b border-green-gray-200 flex items-center">
-                    <p className="text-lg font-medium text-green-gray-900">
-                      Settings
-                    </p>
+                  <div className="flex-shrink-0 h-20 px-6 border-b border-green-gray-200 flex items-center">
+                    <img className="w-3/5" src={"/images/logo.png"} />
+                    {/* <p className="text-sm font-medium text-green-gray-900"></p> */}
                   </div>
                   <div className="flex-1 min-h-0 overflow-y-auto">
                     {subNavigation.map((item) => (
