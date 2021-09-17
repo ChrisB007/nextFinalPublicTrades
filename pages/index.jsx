@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Layout from "../components/layout";
 import Hero from "../components/Hero";
 import { getSession } from "next-auth/client";
@@ -6,7 +5,6 @@ import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
 import DataContent from "../components/DataContent";
-import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -28,8 +26,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Page({ session }) {
-  const router = useRouter();
-
   return (
     <Layout>
       {/* Navigation bar bigin */}
