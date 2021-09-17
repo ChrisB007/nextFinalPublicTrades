@@ -11,6 +11,15 @@ import { useRouter } from "next/router";
 export async function getServerSideProps(context) {
   const session = await getSession(context);
 
+  if (session) {
+    return {
+      redirect: {
+        destination: "/protected",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       session,
@@ -20,11 +29,6 @@ export async function getServerSideProps(context) {
 
 export default function Page({ session }) {
   const router = useRouter();
-  useEffect(() => {
-    {
-      session ? router.push("/protected") : null;
-    }
-  }, []);
 
   return (
     <Layout>
