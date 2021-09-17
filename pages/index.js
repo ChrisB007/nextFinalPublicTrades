@@ -5,6 +5,7 @@ import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
 import DataContent from "../components/DataContent";
+import { portfolios } from "../pages/projectArray";
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
@@ -20,7 +21,8 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function Page({ session, projects }) {
+export default function Page({ session, projects, portfolios }) {
+  console.log(portfolios);
   return (
     <Layout>
       {/* Navigation bar bigin */}

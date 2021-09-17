@@ -199,13 +199,6 @@ export default function Page() {
           <div className="flex flex-col w-20">
             <div className="flex-1 flex flex-col min-h-0 overflow-y-auto bg-green-600">
               <div className="flex-1 flex flex-col">
-                <div className="flex-shrink-0 bg-green-700 py-4 flex items-center justify-center">
-                  {/* <img
-                    className="h-8 w-auto object-contain"
-                    src="/images/logo.png"
-                    alt="Logo"
-                  /> */}
-                </div>
                 <nav
                   aria-label="Sidebar"
                   className="py-6 flex flex-col items-center space-y-3"

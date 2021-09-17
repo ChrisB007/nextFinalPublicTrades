@@ -18,6 +18,7 @@ function DataContent() {
               <div
                 key={portfolio.title}
                 className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 bg-gray-200  cursor-pointer rounded-lg flex-wrap"
+                style={{ backgroundColor: portfolio.bgColor }}
               >
                 <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
                   <a href={portfolio.url}>
@@ -28,10 +29,16 @@ function DataContent() {
                     />
                   </a>
                 </div>
-                <p className="block mt-3 p-4 text-center font-semibold text-gray-500">
+                <p
+                  className="block mt-3 p-4 text-center font-semibold"
+                  style={{ color: portfolio.color }}
+                >
                   {portfolio.description}
                 </p>
-                <p className="block p-4 mt-3 text-center font-semibold text-gray-500">
+                <p
+                  className="block p-4 mt-1 text-center font-semibold"
+                  style={{ color: portfolio.color }}
+                >
                   {portfolio.type}
                 </p>
               </div>
