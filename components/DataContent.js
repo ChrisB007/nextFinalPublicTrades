@@ -23,7 +23,7 @@ function DataContent() {
                 <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
                   <a href={portfolio.url}>
                     <img
-                      className=" w-32 rounded-xl object-contain mb-4"
+                      className=" w-32 rounded-xl object-contain"
                       src={portfolio.image}
                       alt={portfolio.title}
                     />
@@ -34,12 +34,6 @@ function DataContent() {
                   style={{ color: portfolio.color }}
                 >
                   {portfolio.description}
-                </p>
-                <p
-                  className="block p-4 mt-1 text-center font-semibold"
-                  style={{ color: portfolio.color }}
-                >
-                  {portfolio.type}
                 </p>
               </div>
             ))}

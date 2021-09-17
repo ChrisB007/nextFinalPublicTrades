@@ -5,11 +5,7 @@ import { useRouter } from "next/router";
 
 function Login() {
   const [session, loading] = useSession();
-  //   const router = useRouter();
 
-  //   if (session) {
-  //     router.push("/dashboard");
-  //   }
   return (
     <>
       {(!session || session === null) && (
@@ -19,7 +15,7 @@ function Login() {
             className="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             onClick={(e) => {
               e.preventDefault();
-              signIn();
+              signIn("github");
             }}
           >
             Sign in

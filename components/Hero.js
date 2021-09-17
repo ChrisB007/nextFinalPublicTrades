@@ -1,3 +1,5 @@
+import { signIn, signOut, useSession } from "next-auth/client";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -36,7 +38,7 @@ export default function Hero() {
                   <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                     <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                       <a
-                        href="https://www.producthunt.com/"
+                        href="https://www.producthunt.com/protips"
                         target="_blank"
                         className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-green-50 sm:px-8"
                       >
@@ -44,6 +46,10 @@ export default function Hero() {
                       </a>
                       <a
                         href="/api/auth/signin"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          signIn("github");
+                        }}
                         className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
                       >
                         Let's build together

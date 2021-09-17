@@ -22,7 +22,7 @@ export const portfolios = [
   {
     title: "fluidFlats",
     description:
-      "Live anywhere at anytime you wish with Fluid rental apartments.",
+      "Bring your rent along as you switch apartments to live anywhere and whenever you wish with Fluid renting.",
     image: "/images/flats.png",
     url: "https://www.garage-api.com",
     type: "Web App",
