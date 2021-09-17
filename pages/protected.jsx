@@ -280,7 +280,10 @@ export default function Page() {
                   className="hidden flex-shrink-0 w-96 bg-white border-r border-green-gray-200 xl:flex xl:flex-col"
                 >
                   <div className="flex-shrink-0 h-20 px-6 border-b border-green-gray-200 flex items-center">
-                    <img className="w-3/5" src={"/images/logo.png"} />
+                    <img
+                      className="w-40 object-cover"
+                      src={"/images/logo.png"}
+                    />
                     {/* <p className="text-sm font-medium text-green-gray-900"></p> */}
                   </div>
                   <div className="flex-1 min-h-0 overflow-y-auto">
