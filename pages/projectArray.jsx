@@ -1,5 +1,6 @@
-const portfolios = [
+export const portfolios = [
   {
+    id: 1,
     title: "flicBase",
     description:
       "Watch movies, TV, and Stream contents based on how you feel. ",
@@ -10,6 +11,7 @@ const portfolios = [
     color: "#000",
   },
   {
+    id: 2,
     title: "TuberDome",
     description:
       "With this app brands and marketers alike can sponsor content creators on YouTube.",
@@ -20,6 +22,7 @@ const portfolios = [
     color: "#fff",
   },
   {
+    id: 3,
     title: "fluidFlats",
     description:
       "Bring your rent along as you switch apartments to live anywhere and whenever you wish with Fluid renting.",

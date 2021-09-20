@@ -1,7 +1,6 @@
 import React from "react";
-import portfolios from "../pages/projectArray";
 
-function DataContent() {
+function DataContent({ portfolios }) {
   return (
     <div>
       {/* Logo cloud */}
@@ -14,18 +13,18 @@ function DataContent() {
             Growing list of web and mobile apps that once were just ideas.
           </p>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
-            {portfolios.map((portfolio) => (
+            {portfolios?.map((portfolio) => (
               <div
                 key={portfolio.title}
                 className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 bg-gray-200  cursor-pointer rounded-lg flex-wrap"
                 style={{ backgroundColor: portfolio.bgColor }}
               >
                 <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
-                  <a href={portfolio.url}>
+                  <a href={portfolio?.url}>
                     <img
                       className=" w-32 rounded-xl object-contain"
-                      src={portfolio.image}
-                      alt={portfolio.title}
+                      src={portfolio?.image}
+                      alt={portfolio?.title}
                     />
                   </a>
                 </div>
@@ -42,6 +41,17 @@ function DataContent() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const portfolios = await fetch(`/api/portfolios`).then((res) => res.json());
+  console.log(portfolios);
+
+  return {
+    props: {
+      portfolios,
+    },
+  };
 }
 
 export default DataContent;
