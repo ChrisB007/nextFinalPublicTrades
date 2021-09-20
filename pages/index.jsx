@@ -6,25 +6,6 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
 import DataContent from "../components/DataContent";
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-
-  if (session) {
-    return {
-      redirect: {
-        destination: "/protected",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      session,
-    },
-  };
-}
-
 export default function Page({ session }) {
   return (
     <Layout>
@@ -196,4 +177,25 @@ export default function Page({ session }) {
       </main>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  // const portfolios = await fetch(`/api/portfolios`).then((res) => res.json());
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/protected",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+      // portfolios,
+    },
+  };
 }

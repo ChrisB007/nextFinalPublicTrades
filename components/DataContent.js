@@ -1,6 +1,7 @@
 import React from "react";
 
 function DataContent({ portfolios }) {
+  console.log(portfolios);
   return (
     <div>
       {/* Logo cloud */}
@@ -20,11 +21,11 @@ function DataContent({ portfolios }) {
                 style={{ backgroundColor: portfolio.bgColor }}
               >
                 <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
-                  <a href={portfolio?.url}>
+                  <a href={portfolio.url}>
                     <img
                       className=" w-32 rounded-xl object-contain"
-                      src={portfolio?.image}
-                      alt={portfolio?.title}
+                      src={portfolio.image}
+                      alt={portfolio.title}
                     />
                   </a>
                 </div>
@@ -43,9 +44,9 @@ function DataContent({ portfolios }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const portfolios = await fetch(`/api/portfolios`).then((res) => res.json());
-  console.log(portfolios);
+async function getServerSideProps() {
+  const data = await fetch(`/api/portfolios`);
+  const portfolios = await data.json();
 
   return {
     props: {
