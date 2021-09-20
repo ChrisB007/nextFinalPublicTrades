@@ -1,4 +1,4 @@
-export const portfolios = [
+export default portfolios = [
   {
     title: "flicBase",
     description:
