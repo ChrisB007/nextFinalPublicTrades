@@ -1,5 +1,5 @@
 import React from "react";
-import { portfolios } from "../pages/projectArray";
+import portfolios from "../pages/projectArray";
 
 function DataContent() {
   return (

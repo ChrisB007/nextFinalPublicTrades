@@ -1,4 +1,4 @@
-export default portfolios = [
+const portfolios = [
   {
     title: "flicBase",
     description:
@@ -30,3 +30,5 @@ export default portfolios = [
     color: "#000",
   },
 ];
+
+export default portfolios;
