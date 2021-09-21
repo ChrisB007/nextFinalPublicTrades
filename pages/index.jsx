@@ -220,7 +220,7 @@ export default function Page({ session, data }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = "https://www.publictrades.com";
 
   const data = await fetch(`${baseUrl}/api/portfolios`).then((res) =>
     res.json()
