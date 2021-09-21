@@ -1,4 +1,4 @@
-import portfolios from "../../projectArray";
+import portfolios from "./projectArray";
 
 async function singlePortfolio(req, res) {
   const portfolioId = req.query.portfolioId;

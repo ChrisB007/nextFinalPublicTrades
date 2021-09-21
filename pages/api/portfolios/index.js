@@ -1,4 +1,4 @@
-import portfolios from "../../projectArray";
+import portfolios from "./projectArray";
 
 async function index(req, res) {
   const httpMethod = req.method;
