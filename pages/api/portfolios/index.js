@@ -10,10 +10,10 @@ async function index(req, res) {
       break;
     case "POST":
       res.status(200).json({ title, image, description, url, type });
-
+      break;
     default:
       res.setHeader("Allow", ["GET", "POST"]);
-      // res.status(404).json(portfolios);
+      res.status(405).end(`Method ${httpMethod} not allowed`);
       break;
   }
 }

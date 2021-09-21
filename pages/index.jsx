@@ -6,7 +6,7 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
 import DataContent from "../components/DataContent";
 
-export default function Page({ session }) {
+export default function Page({ session, data }) {
   return (
     <Layout>
       {/* Navigation bar bigin */}
@@ -172,7 +172,46 @@ export default function Page({ session }) {
       <main>
         <>
           <Hero />
-          <DataContent />
+          <div>
+            {/* Logo cloud */}
+            <div className="bg-gray-100 mb-20">
+              <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+                <p className="text-3xl text-center font-semibold text-gray-500">
+                  Portfolio
+                </p>
+                <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide ">
+                  Growing list of web and mobile apps that once were just ideas.
+                </p>
+                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+                  {data?.map(
+                    ({ image, url, title, bgColor, color, description }) => (
+                      <div
+                        key={title}
+                        className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 bg-gray-200  cursor-pointer rounded-lg flex-wrap"
+                        style={{ backgroundColor: bgColor }}
+                      >
+                        <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
+                          <a href={url}>
+                            <img
+                              className=" w-32 rounded-xl object-contain"
+                              src={image}
+                              alt={title}
+                            />
+                          </a>
+                        </div>
+                        <p
+                          className="block mt-3 p-4 text-center font-semibold"
+                          style={{ color: color }}
+                        >
+                          {description}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       </main>
     </Layout>
@@ -181,7 +220,11 @@ export default function Page({ session }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  // const portfolios = await fetch(`/api/portfolios`).then((res) => res.json());
+  const baseUrl = "http://localhost:3000";
+
+  const data = await fetch(`${baseUrl}/api/portfolios`).then((res) =>
+    res.json()
+  );
 
   if (session) {
     return {
@@ -194,8 +237,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      session,
-      // portfolios,
+      data,
     },
   };
 }
