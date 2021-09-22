@@ -1,4 +1,4 @@
-export const portfolios = [
+const portfolios = [
   {
     id: 1,
     title: "flicBase",
