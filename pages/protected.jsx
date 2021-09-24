@@ -531,12 +531,6 @@ export default function Page() {
           </main>
         </div>
       </div>
-
-      {/* <span className={styles.signedInText}>
-        <small>Signed in as</small>
-        <br />
-        <strong>{session.user.email || session.user.name}</strong>
-      </span> */}
     </Layout>
   );
 }

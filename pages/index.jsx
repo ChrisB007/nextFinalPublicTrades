@@ -4,7 +4,6 @@ import { getSession } from "next-auth/client";
 import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
-import DataContent from "../components/DataContent";
 
 export default function Page({ session, data }) {
   return (
@@ -191,9 +190,9 @@ export default function Page({ session, data }) {
                         style={{ backgroundColor: bgColor }}
                       >
                         <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
-                          <a href={url}>
+                          <a href={url} target="_blank">
                             <img
-                              className=" w-32 rounded-xl object-contain"
+                              className=" w-64  object-cover"
                               src={image}
                               alt={title}
                             />
@@ -222,9 +221,8 @@ export async function getServerSideProps(context) {
   const session = await getSession(context);
   const baseUrl = "https://www.publictrades.com";
 
-  const data = await fetch(`${baseUrl}/api/portfolios`).then((res) =>
-    res.json()
-  );
+  const rawData = await fetch(`${baseUrl}/api/portfolios`);
+  const data = await rawData.json();
 
   if (session) {
     return {

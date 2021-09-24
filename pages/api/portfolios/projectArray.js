@@ -7,7 +7,7 @@ const portfolios = [
     image: "/images/flicbaselogo.png",
     url: "https://www.flicbase.com",
     type: "Web App",
-    bgColor: "#D1D5DA",
+    bgColor: "#F9FAFB",
     color: "#000",
   },
   {
@@ -18,18 +18,18 @@ const portfolios = [
     image: "/images/berdome.png",
     url: "https://www.tuberdome.com",
     type: "Web App",
-    bgColor: "#F77171",
+    bgColor: "#F9FAFB",
     color: "#fff",
   },
   {
     id: 3,
     title: "fluidFlats",
     description:
-      "Bring your rent along as you switch apartments to live anywhere and whenever you wish with Fluid renting.",
+      "Bring your rent along as you switch apartments to live anywhere and whenever you wish with Fluid renting",
     image: "/images/flats.png",
-    url: "https://www.garage-api.com",
+    url: "https://www.fluidflats.com",
     type: "Web App",
-    bgColor: "#6EE7B7",
+    bgColor: "#F9FAFB",
     color: "#000",
   },
 ];
