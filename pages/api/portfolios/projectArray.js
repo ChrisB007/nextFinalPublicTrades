@@ -19,7 +19,7 @@ const portfolios = [
     url: "https://www.tuberdome.com",
     type: "Web App",
     bgColor: "#F9FAFB",
-    color: "#fff",
+    color: "#000",
   },
   {
     id: 3,
