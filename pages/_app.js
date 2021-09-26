@@ -1,5 +1,6 @@
 import { Provider } from "next-auth/client";
 import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 import "./styles.css";
 
 // Use the <Provider> to improve performance and allow components that call
@@ -7,14 +8,7 @@ import "./styles.css";
 export default function App({ Component, pageProps }) {
   return (
     <Provider
-      // Provider options are not required but can be useful in situations where
-      // you have a short session maxAge time. Shown here with default values.
       options={{
-        // Client Max Age controls how often the useSession in the client should
-        // contact the server to sync the session state. Value in seconds.
-        // e.g.
-        // * 0  - Disabled (always use cache value)
-        // * 60 - Sync session state with server if it's older than 60 seconds
         clientMaxAge: 0,
         // Keep Alive tells windows / tabs that are signed in to keep sending
         // a keep alive request (which extends the current session expiry) to

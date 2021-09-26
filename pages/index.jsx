@@ -192,7 +192,7 @@ export default function Page({ session, data }) {
                         <div className="col-span-1 w-80 m-auto flex justify-center items-center pt-3 md:col-span-2 md:col-start-2 cursor-pointer lg:col-span-1 flex-wrap rounded-lg h-40 ">
                           <a href={url} target="_blank">
                             <img
-                              className=" w-64  object-cover"
+                              className="logocloud object-cover"
                               src={image}
                               alt={title}
                             />
