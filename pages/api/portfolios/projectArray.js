@@ -1,4 +1,4 @@
-const portfolios = [
+export const portfolios = [
   {
     id: 1,
     title: "flicBase",
@@ -33,5 +33,3 @@ const portfolios = [
     color: "#000",
   },
 ];
-
-export default portfolios;

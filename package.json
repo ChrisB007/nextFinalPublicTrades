@@ -9,10 +9,6 @@
     "build": "next build",
     "start": "next start"
   },
-  "author": "Iain Collins <me@iaincollins.com>",
-  "contributors": [
-    "Balázs Orbán <info@balazsorban.com>"
-  ],
   "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^1.4.1",
