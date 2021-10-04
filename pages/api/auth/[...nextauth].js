@@ -19,15 +19,7 @@ export default NextAuth({
   // Notes:
   // * You must install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
-  database: {
-    type: "mongodb",
-    uri: process.env.DATABASE_URL,
-    WriteConcern: { w: "majority", wtimeout: 2500 },
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    retryWrites: true,
-    synchronize: true,
-  },
+  database: process.env.DATABASE_URL,
 
   // The secret should be set to a reasonably long random string.
   // It is used to sign cookies and to sign and encrypt JSON Web Tokens, unless
