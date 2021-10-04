@@ -22,7 +22,7 @@ export default NextAuth({
   database: {
     type: "mongodb",
     uri: process.env.DATABASE_URL,
-    w: "majority",
+    WriteConcern: { w: "majority", wtimeout: 2500 },
     useNewUrlParser: true,
     useUnifiedTopology: true,
     retryWrites: true,
