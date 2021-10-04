@@ -1,4 +1,4 @@
-import { portfolios } from "../portfolios/projectArray";
+import portfolios from "../portfolios/projectArray";
 
 export default async function allProjects(req, res) {
   const method = req.method;

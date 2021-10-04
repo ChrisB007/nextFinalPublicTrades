@@ -4,8 +4,9 @@ import { getSession } from "next-auth/client";
 import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
+import portfolios from "./portfolio";
 
-export default function Page({ session, data }) {
+export default function Page({ session }) {
   return (
     <Layout>
       {/* Navigation bar bigin */}
@@ -182,7 +183,7 @@ export default function Page({ session, data }) {
                   Growing list of web and mobile apps that once were just ideas.
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
-                  {data?.map(
+                  {portfolios?.map(
                     ({ image, url, title, bgColor, color, description }) => (
                       <div
                         key={title}
@@ -219,10 +220,12 @@ export default function Page({ session, data }) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const baseUrl = "https://www.publictrades.com";
+  // const baseUrl = "https://www.publictrades.com";
 
-  const rawData = await fetch(`${baseUrl}/api/portfolios`);
-  const data = await rawData.json();
+  // const rawData = await fetch(`${baseUrl}/api/portfolios`);
+  // const data = await rawData.json();
+
+  console.log(session);
 
   if (session) {
     return {
@@ -231,11 +234,13 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     };
+  } else {
+    console.log("No session yet");
   }
 
   return {
     props: {
-      data,
+      session,
     },
   };
 }
