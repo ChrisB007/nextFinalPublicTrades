@@ -34,4 +34,4 @@ const portfolios = [
   },
 ];
 
-export default portfolios;
+export { portfolios };

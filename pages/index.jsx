@@ -4,7 +4,7 @@ import { getSession } from "next-auth/client";
 import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Login from "../components/Login";
-import portfolios from "./portfolio";
+import { portfolios } from "./portfolio";
 
 export default function Page({ session }) {
   return (
